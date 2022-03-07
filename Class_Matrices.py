@@ -316,3 +316,7 @@ class Linear_Matrices:
             return self.diagonal
         self.diagonal = "False"
         return self.diagonal
+
+    def is_orthogonal(self):
+        matrix = Linear_Matrices(self)
+        matrix.transpose()
