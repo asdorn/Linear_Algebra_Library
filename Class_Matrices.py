@@ -284,3 +284,35 @@ class Linear_Matrices:
                 I[operation[1]][rep] = I[operation[1]][rep] + (I[operation[0]][rep] * operation[2])
         self.inverse = I
         return I
+
+    def is_symmetric(self):
+        if self.dim[0] == self.dim[1]:
+            row_vectors_non_transpose = self.row_vectors
+            self.transpose()
+            for vector,vector_transpose in zip(row_vectors_non_transpose,self.row_vectors):
+                if vector != vector_transpose:
+                    self.symmetric = "False"
+                    self.transpose()
+                    return self.symmetric
+            self.symmetric = "True"
+            self.transpose()
+            return self.symmetric
+        self.symmetric = "False"
+        return self.symmetric
+
+    def is_diagonal(self):
+        if self.dim[0] == self.dim[1]:
+            for vector_index,vector in enumerate(self.row_vectors):
+                for index in range(len(vector)):
+                    if vector_index == index:
+                        if vector[index] == 0:
+                            self.diagonal = "False"
+                            return self.diagonal
+                    if vector_index != index:
+                        if vector[index] != 0:
+                            self.diagonal = "False"
+                            return self.diagonal
+            self.diagonal = "True"
+            return self.diagonal
+        self.diagonal = "False"
+        return self.diagonal
