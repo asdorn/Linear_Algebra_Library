@@ -15,3 +15,4 @@ Class that offers a variety of matrices methods. including:
 13.	invert - returns the inverse of the matrix, uses both "echelon" and "canonical_form" methods, and the log of elementary operations used in both methods.
 14.	is symmetric - returns if the matrix is symmetric or not, adding a new object value "self.symmetric".
 15.	is diagonal - returns if the matrix is diagonal or not, adding a new object value "self.diagonal".
+16. is orthogonal - returns if the matrix is orthogonal or not, adding a new object value "self.orthogonal".
