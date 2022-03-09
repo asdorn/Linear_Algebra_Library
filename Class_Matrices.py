@@ -264,14 +264,18 @@ class Linear_Matrices:
             print("Could not create block matrix")
             return False
 
-    def invert(self):
+    def create_I_matrix(self):
         I = [[] for i in range(self.dim[0])]
-        for vector_index,vector in enumerate(I):
+        for vector_index, vector in enumerate(I):
             for j in range(self.dim[1]):
                 if vector_index == j:
                     I[vector_index].append(float(1))
                 else:
                     I[vector_index].append(0)
+        return I
+
+    def invert(self):
+        I = self.create_I_matrix()
         fake, operations_log = self.echelon("row","Yes")
         fake_2, operations_log_canonical = self.canonical_form("row","Yes")
         for record in operations_log_canonical:
@@ -318,5 +322,11 @@ class Linear_Matrices:
         return self.diagonal
 
     def is_orthogonal(self):
-        matrix = Linear_Matrices(self)
+        I = self.create_I_matrix()
+        matrix = copy.deepcopy(self)
         matrix.transpose()
+        if self.multiplication(matrix) == I and matrix.multiplication(self) == I:
+            self.orthogonal = True
+            return True
+        self.orthogonal = False
+        return False
