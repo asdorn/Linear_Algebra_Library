@@ -12,7 +12,8 @@ Class that offers a variety of matrices methods. including:
 10.	basis - returns the basis of row vectors or column vectors, depends on users decision.
 11.	determinant - returns the determinant of the matrix.
 12.	create_block_matrix - returns the block matrix created by two matrices (both objects of the class), creates the block matrix only if dimensions compatible, depends on users decision (on how to connect the matrices).
-13.	invert - returns the inverse of the matrix, uses both "echelon" and "canonical_form" methods, and the log of elementary operations used in both methods.
-14.	is symmetric - returns if the matrix is symmetric or not, adding a new object value "self.symmetric".
-15.	is diagonal - returns if the matrix is diagonal or not, adding a new object value "self.diagonal".
-16. is orthogonal - returns if the matrix is orthogonal or not, adding a new object value "self.orthogonal".
+13.	create_I_matrix - creates an object value which holds an I matrix with the same dim as the object matrix has.
+14.	invert - returns the inverse of the matrix, uses both "echelon" and "canonical_form" methods, and the log of elementary operations used in both methods.
+15.	is symmetric - returns if the matrix is symmetric or not, adding a new object value "self.symmetric".
+16.	is diagonal - returns if the matrix is diagonal or not, adding a new object value "self.diagonal".
+17. is orthogonal - returns if the matrix is orthogonal or not, adding a new object value "self.orthogonal".
