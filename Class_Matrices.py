@@ -1,7 +1,7 @@
 import copy
 
 class Linear_Matrices:
-    def __init__(self,A):
+    def __init__(self, A):
         """
         the object must have a form of vectors,
         so that we could create a matrix object.
@@ -39,7 +39,7 @@ class Linear_Matrices:
         print("This matrix is valid")
         return True
 
-    def multiplication(self,matrix):
+    def multiplication(self, matrix):
         """
         multiply each row of the left matrix by each column of right matrix.
         :param matrix: the matrix which would be mupltiplied by user matrix,
@@ -61,7 +61,7 @@ class Linear_Matrices:
               " not valid dimensions")
         return False
 
-    def addition(self,matrix):
+    def addition(self, matrix):
         """
         add each row of each matrix with matching row in either matrix.
         :param matrix: the matrix which will be added to self, must be object too!
@@ -118,7 +118,7 @@ class Linear_Matrices:
         self.rank = rank_count
         return self.rank
 
-    def echelon(self,column_or_row,operation_log = "No"):
+    def echelon(self, column_or_row, operation_log = "No"):
         """
         iterates over each row, and reducts all rows at the same col_index of
         current pivot, until reaches end of matrix (columns wise).
@@ -181,7 +181,7 @@ class Linear_Matrices:
             return column_or_row, operations_log
         return column_or_row
 
-    def basis(self,column_or_row):
+    def basis(self, column_or_row):
         """
         by using the find_echelon func, we find the echelon form and extract the non-zero vectors, which will
         form the basis (column or row)
@@ -228,7 +228,7 @@ class Linear_Matrices:
             index += 1
         return multi
 
-    def create_block_matrix(self,B,direction):
+    def create_block_matrix(self, B, direction):
         """
         creating block matrix, only if a valid one can be created
         :param B: the matrix which will be added to the main matrix
