@@ -1,4 +1,4 @@
-# Matrix_Operations_Library
+# Linear_Algebra_Library
 Class that offers a variety of matrices methods. including:
 1.	init a matrix - if not valid form of matrix, raise error.
 2.	validation of matrix - if the matrix hold non-int or non-float values, prints explnation of why the matrix is not valid. if there is a different dim of a specific vector, prints explnation of why the matrix is not valid.
